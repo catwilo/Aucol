@@ -13,8 +13,8 @@ public class Ex_Asociado extends Aucoleano {
     //Falta fecha de salida 
     boolean gratitud;
 
-    public Ex_Asociado(boolean gratitud, int Id, String nombre, String carrera, String universidad, String lugarOrigen, String password) {
-        super(Id, nombre, carrera, universidad, lugarOrigen, password);
+    public Ex_Asociado(boolean gratitud, int Id, String nombre, String carrera, String universidad, String lugarOrigen) {
+        super(Id, nombre, carrera, universidad, lugarOrigen);
         this.gratitud = gratitud;
     }
     
