@@ -6,6 +6,7 @@
 package aucol;
 import java.util.*;
 import java.io.*;
+import Structures.*;
 
 /**
  *
@@ -32,17 +33,17 @@ public class Aucol {
         String sinopsis;
         int disponibilidad;
         
-        ArrayList<Book> libros = new ArrayList<Book>(); // Create an ArrayList object
+        Lista<Book> libros = new Lista<Book>(); // Create an ArrayList object
         
        for(int i=0;i<10000;i++){
             linea=br.readLine();
 
             String[] parts = linea.split(";");
-            autor = parts[0];
-            titulo = parts[1];
-            seccion = parts[2];
-            sinopsis = parts[3];
-            disponibilidad = Integer.parseInt(parts[4]);
+            autor = parts[1];
+            titulo = parts[2];
+            seccion = parts[3];
+            sinopsis = parts[4];
+            disponibilidad = Integer.parseInt(parts[0]);
            
            
             Book b=new Book(titulo, autor, seccion, sinopsis, disponibilidad);
@@ -55,7 +56,8 @@ public class Aucol {
         
         for(int i=0;i<libros.size();i++){
             Book n=libros.get(i);
-            System.out.println("Titulo: " +n.getTitulo() + "\tAutor: " +n.getAutor());
+            if(n.getDisponibilidad()==80 && n.getAutor().equals("Concepcion"))
+                System.out.println("Ingreso correcto");
         }
     }
     

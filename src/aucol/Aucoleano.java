@@ -9,7 +9,7 @@ package aucol;
  *
  * @author cattwinlow
  */
-abstract class Aucoleano {
+abstract class Aucoleano implements Comparable{
 
     int id;
     String nombre, carrera, universidad, lugarOrigen;
