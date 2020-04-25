@@ -28,6 +28,7 @@ public class LinkedLis<T> {
 
     }
 
+    /*
     public void Printlist() {
         if (this.head == null) {
             System.out.println("ERROR: empty list");
@@ -39,7 +40,7 @@ public class LinkedLis<T> {
             p = p.getNext();
         }
     }
-
+     */
     public void PopFront() {
         if (this.head == null) {
             System.out.println("ERROR: empty list");

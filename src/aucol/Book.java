@@ -42,7 +42,6 @@ public class Book implements Comparable{
     public boolean  getDisponibilidad() {
         return disponibilidad;
     }
-    
 
     @Override
     public int compareTo(Object t) {
