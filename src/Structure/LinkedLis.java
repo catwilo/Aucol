@@ -9,7 +9,7 @@ package Structure;
  *
  * @author causugamo
  */
-public class LinkedLis <T> {
+public class LinkedLis<T> {
 
     private ChainNode head;
     private ChainNode tail;
@@ -28,15 +28,15 @@ public class LinkedLis <T> {
 
     }
 
-    public void ImprimirLista() {
+    public void Printlist() {
         if (this.head == null) {
             System.out.println("ERROR: empty list");
             return;
         }
         ChainNode p = this.head;
         while (p != null) {
-            System.out.println(p.element);
-            p = p.next;
+            System.out.println(p.getData());
+            p = p.getNext();
         }
     }
 
@@ -44,7 +44,7 @@ public class LinkedLis <T> {
         if (this.head == null) {
             System.out.println("ERROR: empty list");
         }
-        this.head = head.next;
+        this.head = head.getNext();
         if (this.head == null) {
             this.tail = null;
         }

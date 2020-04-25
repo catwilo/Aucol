@@ -11,10 +11,10 @@ package aucol;
  */
 public class Book implements Comparable{
     String titulo, autor, sección, sinopsis;
-    int disponibilidad; //0:Prestado, 1:Disponible
+    boolean disponibilidad; //0:Prestado, 1:Disponible
     String[] tags;
 
-    public Book(String titulo, String autor, String sección, String sinopsis, int disponibilidad) {
+    public Book(String titulo, String autor, String sección, String sinopsis, boolean disponibilidad) {
         this.titulo = titulo;
         this.autor = autor;
         this.sección = sección;
@@ -39,9 +39,10 @@ public class Book implements Comparable{
         return titulo;
     }
 
-    public int getDisponibilidad() {
+    public boolean  getDisponibilidad() {
         return disponibilidad;
     }
+    
 
     @Override
     public int compareTo(Object t) {

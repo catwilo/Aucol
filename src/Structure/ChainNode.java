@@ -2,28 +2,37 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
-b
  */
 package Structure;
 
-/**
- *
- * @author causugamo
- */
-class ChainNode <T> {
-    //package visible fields
-    T element;
-    ChainNode<T> next;
-    
-    //package visible constructors
-    ChainNode(){
-        this( null, null);
+public class ChainNode<T> {
+
+    private T data;
+    private ChainNode<T> next;
+
+    public ChainNode(T data) {
+        this.data = data;
+        next = null;
     }
-    ChainNode (T element ){
-        this(element, null );
+
+    public ChainNode(T data, ChainNode<T> next) {
+        this.data = data;
+        this.next = next;
     }
-    ChainNode (T element, ChainNode<T> next){
-        this.element = element;
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public ChainNode getNext() {
+        return next;
+    }
+
+    public void setNext(ChainNode<T> next) {
         this.next = next;
     }
 }

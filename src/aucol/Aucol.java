@@ -5,9 +5,10 @@
  */
 package aucol;
 
+import Structure.LinkedLis;
 import java.util.*;
 import java.io.*;
-import Structure.*;
+import static java.lang.Boolean.parseBoolean;
 
 /**
  *
@@ -20,8 +21,6 @@ public class Aucol {
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        // TODO code application logic here
-        //ArrayList<Asociado> hey = new ArrayList<Asociado>();
         FileReader fr = new FileReader("libros.txt");
         BufferedReader br = new BufferedReader(fr);
 
@@ -30,9 +29,9 @@ public class Aucol {
         String autor;
         String seccion;
         String sinopsis;
-        int disponibilidad;
+        boolean disponibilidad;
 
-        LinkedList<Book> Lista = new LinkedList<Book>(); // Create an ArrayList object
+        LinkedLis<Book> Lista = new LinkedLis<Book>(); // Create an ArrayList object
 
         for (int i = 0; i < 10000; i++) {
             linea = br.readLine();
@@ -42,22 +41,12 @@ public class Aucol {
             titulo = parts[2];
             seccion = parts[3];
             sinopsis = parts[4];
-            disponibilidad = Integer.parseInt(parts[0]);
+            disponibilidad = parseBoolean(parts[0]);
 
             Book b = new Book(titulo, autor, seccion, sinopsis, disponibilidad);
 
-            Lista.add(b);
+            Lista.PushFront(b);
         }
-
-        System.out.println(linea);
-
-        for (int i = 0; i < Lista.size(); i++) {
-            Book n = Lista.get(i);
-            if (n.getDisponibilidad() == 80 && n.getAutor().equals("Concepcion")) {
-                System.out.println("Ingreso correcto");
-            }
-        }
-
     }
 
 }

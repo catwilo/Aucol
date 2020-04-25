@@ -16,7 +16,6 @@ public class LinkedStack<T> implements Stack<T> {
     protected ChainNode<T> topNode;
 
     public LinkedStack() {
-
     }
 
     @Override
@@ -29,7 +28,7 @@ public class LinkedStack<T> implements Stack<T> {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return topNode.element;
+        return topNode.getData();
     }
 
     @Override
@@ -42,8 +41,8 @@ public class LinkedStack<T> implements Stack<T> {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        T topElement = topNode.element;
-        topNode = topNode.next;
+        T topElement = topNode.getData();
+        topNode = topNode.getNext();
         return topElement;
     }
 }

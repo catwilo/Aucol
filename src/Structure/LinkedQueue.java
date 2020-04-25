@@ -5,8 +5,6 @@
  */
 package Structure;
 
-import java.util.*;
-
 /**
  *
  * @author causugamo
@@ -14,10 +12,10 @@ import java.util.*;
 public class LinkedQueue<T> implements Queue<T> {
 
     protected ChainNode<T> front;
-    protected ChainNode<T> rear;
+    protected ChainNode<T> tail;
 
     public LinkedQueue() {
-        front = rear = null;
+        front = tail = null;
     }
 
     @Override
@@ -27,12 +25,12 @@ public class LinkedQueue<T> implements Queue<T> {
 
     @Override
     public T getFrontElement() {
-        return isEmpty() ? null : front.element;
+        return isEmpty() ? null : front.getData();
     }
 
     @Override
     public T getRearElement() {
-        return isEmpty() ? null : rear.element;
+        return isEmpty() ? null : tail.getData();
     }
 
     @Override
@@ -41,9 +39,9 @@ public class LinkedQueue<T> implements Queue<T> {
         if (front == null) {
             front = p;
         } else {
-            rear.next = p;
+            tail.setNext(p);
         }
-        rear = p;
+        tail = p;
     }
 
     @Override
@@ -51,10 +49,10 @@ public class LinkedQueue<T> implements Queue<T> {
         if (isEmpty()) {
             return null;
         }
-        T frontElement = front.element;
-        front = front.next;
+        T frontElement = front.getData();
+        front = front.getNext();
         if (isEmpty()) {
-            rear = null;
+            tail = null;
         }
         return frontElement;
     }
