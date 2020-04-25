@@ -6,7 +6,7 @@
 package aucol;
 import java.util.*;
 import java.io.*;
-import Structures.*;
+import Structure.*;
 
 /**
  *
@@ -33,7 +33,7 @@ public class Aucol {
         String sinopsis;
         int disponibilidad;
         
-        Lista<Book> libros = new Lista<Book>(); // Create an ArrayList object
+        ListaSimple<Book> ListaSimple = new ListaSimple<Book>(); // Create an ArrayList object
         
        for(int i=0;i<10000;i++){
             linea=br.readLine();
