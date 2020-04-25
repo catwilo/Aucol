@@ -54,11 +54,11 @@ public class Aucol {
         
         //System.out.println(linea);
         
-        /*for(int i=0;i<libros.size();i++){
+       /* for(int i=0;i<libros.size();i++){
             Book n=libros.get(i);
             if(n.getDisponibilidad()==80 && n.getAutor().equals("Concepcion"))
                 System.out.println("Ingreso correcto");
-        }**/
+        }*/
     }
     
 }
