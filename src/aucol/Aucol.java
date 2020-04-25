@@ -25,14 +25,14 @@ public class Aucol {
         FileReader fr = new FileReader("libros.txt");
         BufferedReader br = new BufferedReader(fr);
 
-        String linea;
+        String linea = null;
         String titulo;
         String autor;
         String seccion;
         String sinopsis;
         int disponibilidad;
 
-        ListaSimple<Book> ListaSimple = new ListaSimple<Book>(); // Create an ArrayList object
+        LinkedList<Book> Lista = new LinkedList<Book>(); // Create an ArrayList object
 
         for (int i = 0; i < 10000; i++) {
             linea = br.readLine();
@@ -46,17 +46,18 @@ public class Aucol {
 
             Book b = new Book(titulo, autor, seccion, sinopsis, disponibilidad);
 
-            ListaSimple.add(b);
+            Lista.add(b);
         }
 
         System.out.println(linea);
 
-        for (int i = 0; i < ListaSimple.size(); i++) {
-            Book n = ListaSimple.get(i);
+        for (int i = 0; i < Lista.size(); i++) {
+            Book n = Lista.get(i);
             if (n.getDisponibilidad() == 80 && n.getAutor().equals("Concepcion")) {
                 System.out.println("Ingreso correcto");
             }
-            ]
         }
 
     }
+
+}

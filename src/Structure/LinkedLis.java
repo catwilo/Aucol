@@ -9,12 +9,12 @@ package Structure;
  *
  * @author causugamo
  */
-public class ListaSimple <T> {
+public class LinkedLis <T> {
 
     private ChainNode head;
     private ChainNode tail;
 
-    public ListaSimple() {
+    public LinkedLis() {
         this.head = null;
         this.tail = null;
     }
