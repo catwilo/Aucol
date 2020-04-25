@@ -48,17 +48,17 @@ public class Aucol {
            
             Book b=new Book(titulo, autor, seccion, sinopsis, disponibilidad);
             
-            libros.add(b);
+            //libros.add(b);
        }
 
         
         //System.out.println(linea);
         
-        for(int i=0;i<libros.size();i++){
+       /* for(int i=0;i<libros.size();i++){
             Book n=libros.get(i);
             if(n.getDisponibilidad()==80 && n.getAutor().equals("Concepcion"))
                 System.out.println("Ingreso correcto");
-        }
+        }*/
     }
     
 }

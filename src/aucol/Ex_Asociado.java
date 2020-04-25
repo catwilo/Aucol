@@ -17,6 +17,11 @@ public class Ex_Asociado extends Aucoleano {
         super(Id, nombre, carrera, universidad, lugarOrigen);
         this.gratitud = gratitud;
     }
+
+    @Override
+    public int compareTo(Object t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

@@ -54,6 +54,11 @@ public class Asociado extends Aucoleano {
     public String getLugarOrigen() {
         return lugarOrigen;
     }
+
+    @Override
+    public int compareTo(Object t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
