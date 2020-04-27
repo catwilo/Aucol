@@ -9,7 +9,7 @@ package aucol;
  *
  * @author crist
  */
-public class Asociado extends Aucoleano {
+public class Asociado extends Aucoleano implements Comparable<Asociado> {
     
     boolean rat; //0: No ratificado, 1: Ratificado
     int rol;//0:Asociado, 1:Presidencia, 2:Tesorería, 3: Mantenimiento, 4:Economato
@@ -56,7 +56,7 @@ public class Asociado extends Aucoleano {
     }
 
     @Override
-    public int compareTo(Object t) {
+    public int compareTo(Asociado t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

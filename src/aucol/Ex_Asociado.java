@@ -9,7 +9,7 @@ package aucol;
  *
  * @author crist
  */
-public class Ex_Asociado extends Aucoleano {
+public class Ex_Asociado extends Aucoleano implements Comparable<Ex_Asociado> {
     //Falta fecha de salida 
     boolean gratitud;
 
@@ -19,9 +19,10 @@ public class Ex_Asociado extends Aucoleano {
     }
 
     @Override
-    public int compareTo(Object t) {
+    public int compareTo(Ex_Asociado t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     
     
 }

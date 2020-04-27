@@ -5,7 +5,7 @@
  */
 package Structure;
 
-public class ChainNode<T> {
+public class ChainNode<T extends Comparable>{
 
     private T data;
     private ChainNode<T> next;

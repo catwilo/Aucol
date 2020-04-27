@@ -9,7 +9,7 @@ package aucol;
  *
  * @author crist
  */
-public class Book implements Comparable{
+public class Book implements Comparable<Book>{
     String titulo, autor, sección, sinopsis;
     boolean disponibilidad; //0:Prestado, 1:Disponible
     String[] tags;
@@ -22,6 +22,12 @@ public class Book implements Comparable{
         this.disponibilidad = disponibilidad;
         
     }
+
+    public Book(String titulo) {
+        this.titulo = titulo;
+    }
+    
+    
 
     public String getAutor() {
         return autor;
@@ -42,10 +48,19 @@ public class Book implements Comparable{
     public boolean  getDisponibilidad() {
         return disponibilidad;
     }
+    
+    
+    
+
 
     @Override
-    public int compareTo(Object t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String toString() {
+        return titulo;
+    }
+
+    @Override
+    public int compareTo(Book t) {
+        return this.titulo.compareTo(t.titulo);
     }
     
     

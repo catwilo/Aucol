@@ -5,7 +5,7 @@
  */
 package aucol;
 
-import Structure.LinkedLis;
+import Structure.*;
 import java.util.*;
 import java.io.*;
 import static java.lang.Boolean.parseBoolean;
@@ -54,16 +54,18 @@ public class Aucol {
          */
         
         long inicio=System.nanoTime();
-        
-        
-        loadbooks();
-        
+        LinkedLis LBooks=loadbooks();
         long fin=System.nanoTime();
-        
         System.out.println(((fin-inicio)*1.0e-9));
+        
+        
+        inicio=System.nanoTime();
+        boolean x=findBook(LBooks,"BABABABBAABBAAAB");
+        fin=System.nanoTime();
+        System.out.println("\n" + x + " "+ ((fin-inicio)*1.0e-9));
     }
 
-    private static void loadbooks() throws IOException {
+    private static LinkedLis loadbooks() throws IOException {
         FileReader fr = null;
         try {
             fr = new FileReader("libros.txt");
@@ -81,20 +83,40 @@ public class Aucol {
 
         LinkedLis<Book> Lbooks = new LinkedLis<Book>(); // Create an ArrayList object
 
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 1000000; i++) {
             linea = br.readLine();
 
             String[] parts = linea.split(";");
-            autor = parts[1];
-            titulo = parts[2];
-            seccion = parts[3];
-            sinopsis = parts[4];
-            disponibilidad = parseBoolean(parts[0]);
+            autor = parts[0];
+            titulo = parts[1];
+            seccion = parts[2];
+            sinopsis = parts[3];
+            disponibilidad = parseBoolean(parts[4]);
 
             Book b = new Book(titulo, autor, seccion, sinopsis, disponibilidad);
 
             Lbooks.PushFront(b);
         }
+        
+        return Lbooks;
+    }
+    
+    private static boolean findBook(LinkedLis Lis, String titulo){
+        boolean found=false;
+        
+        ChainNode ptr=Lis.getHead();
+        Book B=new Book(titulo);
+        
+        while(ptr!=null){
+            if(ptr.getData().compareTo(B)==0){
+                found =true;
+                return found;
+            }
+            //System.out.print("intento ");
+            ptr=ptr.getNext();
+        }
+        
+        return found;
     }
 
 }

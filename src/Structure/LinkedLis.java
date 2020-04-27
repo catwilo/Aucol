@@ -9,7 +9,7 @@ package Structure;
  *
  * @author causugamo
  */
-public class LinkedLis<T> {
+public class LinkedLis<T extends Comparable> {
 
     private ChainNode head;
     private ChainNode tail;
@@ -49,5 +49,9 @@ public class LinkedLis<T> {
         if (this.head == null) {
             this.tail = null;
         }
+    }
+    
+    public ChainNode getHead(){
+        return this.head;
     }
 }
