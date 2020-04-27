@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  *
  * @author cattwinlow
  */
+
 public class Aucol {
 
     /**
@@ -51,9 +52,18 @@ public class Aucol {
 
         }
          */
+        
+        long inicio=System.nanoTime();
+        
+        
+        loadbooks();
+        
+        long fin=System.nanoTime();
+        
+        System.out.println(((fin-inicio)*1.0e-9));
     }
 
-    private void loadbooks() throws IOException {
+    private static void loadbooks() throws IOException {
         FileReader fr = null;
         try {
             fr = new FileReader("libros.txt");
@@ -84,7 +94,9 @@ public class Aucol {
             Book b = new Book(titulo, autor, seccion, sinopsis, disponibilidad);
 
             Lbooks.PushFront(b);
-
         }
     }
+
 }
+
+
