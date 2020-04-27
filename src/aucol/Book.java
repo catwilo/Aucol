@@ -24,7 +24,7 @@ public class Book implements Comparable<Book>{
     }
 
     public Book(String titulo) {
-        this.titulo = titulo;
+        this.sección = titulo;
     }
     
     
@@ -48,19 +48,17 @@ public class Book implements Comparable<Book>{
     public boolean  getDisponibilidad() {
         return disponibilidad;
     }
-    
-    
-    
-
 
     @Override
     public String toString() {
-        return titulo;
+        return "Book{" + "titulo=" + titulo + ", autor=" + autor + ", secci\u00f3n=" + sección + ", sinopsis=" + sinopsis + ", disponibilidad=" + disponibilidad + ", tags=" + tags + '}';
     }
+    
+    
 
     @Override
     public int compareTo(Book t ) {
-        return this.titulo.compareTo(t.titulo);
+        return this.sección.compareTo(t.sección);
     }
     
     

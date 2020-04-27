@@ -60,7 +60,7 @@ public class Aucol {
         
         
         inicio=System.nanoTime();
-        boolean x=findBook(LBooks,"BABABABBAABBAAAB");
+        boolean x=findBook(LBooks,"Matematicas");
         fin=System.nanoTime();
         System.out.println("\n" + x + " "+ ((fin-inicio)*1.0e-9));
     }
@@ -74,48 +74,39 @@ public class Aucol {
         }
         BufferedReader br = new BufferedReader(fr);
 
-        String linea = null;
-        String titulo;
-        String autor;
-        String seccion;
-        String sinopsis;
-        boolean disponibilidad;
-
         LinkedLis<Book> Lbooks = new LinkedLis<Book>(); // Create an ArrayList object
-
+        
+        long inicio=System.nanoTime();
+        
         for (int i = 0; i < 1000000; i++) {
-            linea = br.readLine();
-
+            String linea = br.readLine();
             String[] parts = linea.split(";");
-            autor = parts[0];
-            titulo = parts[1];
-            seccion = parts[2];
-            sinopsis = parts[3];
-            disponibilidad = parseBoolean(parts[4]);
-
-            Book b = new Book(titulo, autor, seccion, sinopsis, disponibilidad);
-
+            Book b = new Book(parts[1], parts[0], parts[2], parts[3], parseBoolean(parts[4]));
             Lbooks.PushFront(b);
         }
+        
+        long fin=System.nanoTime();
+        System.out.println(((fin-inicio)*1.0e-9));
         
         return Lbooks;
     }
     
-    private static boolean findBook(LinkedLis Lis, String titulo){
+    private static boolean findBook(LinkedLis Lis, String seccion){
         boolean found=false;
-        
+        int j=0;
         ChainNode ptr=Lis.getHead();
-        Book B=new Book(titulo);
+        Book B=new Book(seccion);
         
         while(ptr!=null){
             if(ptr.getData().compareTo(B)==0){
                 found =true;
-                return found;
+                j++;
+                System.out.println(j +"  "+ptr.getData().toString());
+                //return found;  
             }
             //System.out.print("intento ");
             ptr=ptr.getNext();
         }
-        
         return found;
     }
 
