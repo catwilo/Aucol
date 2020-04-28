@@ -10,17 +10,17 @@ package aucol;
  * @author crist
  */
 public class Asociado extends Aucoleano implements Comparable<Asociado> {
-    
+
     boolean rat; //0: No ratificado, 1: Ratificado
     int rol;//0:Asociado, 1:Presidencia, 2:Tesorería, 3: Mantenimiento, 4:Economato
-            //5:Vocalía, 6:Secretaría, 7:Fiscalía
+    //5:Vocalía, 6:Secretaría, 7:Fiscalía
     String password;
 
-    public Asociado(boolean rat, int rol, int id, String nombre, String carrera, String universidad, String lugarOrigen, String password) {
+    public Asociado(String rat,/* int rol,*/ String id, String nombre, String carrera, String universidad, String lugarOrigen, String password) {
         super(id, nombre, carrera, universidad, lugarOrigen);
-        this.rat = rat;
-        this.rol = rol;
-        this.password=password;
+        this.rat = Boolean.parseBoolean(rat);
+        /*this.rol = rol;*/
+        this.password = password;
     }
 
     public String getNombre() {
@@ -59,7 +59,5 @@ public class Asociado extends Aucoleano implements Comparable<Asociado> {
     public int compareTo(Asociado t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
+
 }

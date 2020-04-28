@@ -15,12 +15,12 @@ abstract class Aucoleano {
     String nombre, carrera, universidad, lugarOrigen;
     //Falta fecha de ingreso, no se como ponerlo :v
 
-    public Aucoleano(int Id, String nombre, String carrera, String universidad, String lugarOrigen) {
-        this.id = id;
+    public Aucoleano(String Id, String nombre, String carrera, String universidad, String lugarOrigen) {
+        this.id = Integer.parseInt(Id);
         this.nombre = nombre;
         this.carrera = carrera;
         this.universidad = universidad;
         this.lugarOrigen = lugarOrigen;
-    } 
-    
+    }
+
 }
