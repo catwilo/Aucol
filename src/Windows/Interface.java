@@ -16,6 +16,8 @@ public class Interface extends javax.swing.JFrame {
      */
     public Interface() {
         initComponents();
+        //para que la interfaz see ajuste al centro de la pantalla al iniciar
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,6 +32,7 @@ public class Interface extends javax.swing.JFrame {
         jLabel1Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel1Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/fondo.jpg"))); // NOI18N
 
