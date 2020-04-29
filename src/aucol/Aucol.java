@@ -15,24 +15,7 @@ import java.util.logging.Logger;
  *
  * @author cattwinlow
  */
-public class Aucol {
-
-    /**
-     * @param args the command line arguments
-     * @throws java.io.FileNotFoundException
-     */
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-
-        long inicio = System.nanoTime();
-        LinkedLis LBooks = loadbooks();
-        long fin = System.nanoTime();
-        System.out.println(((fin - inicio) * 1.0e-9));
-
-        inicio = System.nanoTime();
-        boolean x = findBook(LBooks, "Matematicas");
-        fin = System.nanoTime();
-        System.out.println("\n" + x + " " + ((fin - inicio) * 1.0e-9));
-    }
+public class Aucol<T> {
 
     private static LinkedLis loadbooks() throws IOException {
         FileReader fr = null;
@@ -104,4 +87,26 @@ public class Aucol {
         }
         return found;
     }
+
+    private static void find(T l) {
+
+    }
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.FileNotFoundException
+     */
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+
+        long inicio = System.nanoTime();
+        LinkedLis LBooks = loadbooks();
+        long fin = System.nanoTime();
+        System.out.println(((fin - inicio) * 1.0e-9));
+
+        inicio = System.nanoTime();
+        boolean x = findBook(LBooks, "Matematicas");
+        fin = System.nanoTime();
+        System.out.println("\n" + x + " " + ((fin - inicio) * 1.0e-9));
+    }
+
 }
