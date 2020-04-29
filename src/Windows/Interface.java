@@ -29,30 +29,89 @@ public class Interface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1Background = new javax.swing.JLabel();
+        IniciarSesion = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
+        TextUser = new javax.swing.JLabel();
+        TextPass = new javax.swing.JLabel();
+        InPass = new javax.swing.JPasswordField();
+        InUser = new javax.swing.JFormattedTextField();
+        IconAucol = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/fondo.jpg"))); // NOI18N
+        IniciarSesion.setText("Iniciar Sesión");
+        IniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IniciarSesionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1Background)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1Background)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        TextUser.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
+        TextUser.setForeground(new java.awt.Color(255, 255, 255));
+        TextUser.setText("Clave");
+        getContentPane().add(TextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, -1, -1));
+
+        TextPass.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
+        TextPass.setForeground(new java.awt.Color(255, 255, 255));
+        TextPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextPass.setText("Usuario");
+        getContentPane().add(TextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
+
+        InPass.setBackground(new java.awt.Color(153, 0, 0));
+        InPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InPassActionPerformed(evt);
+            }
+        });
+        getContentPane().add(InPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, 120, 20));
+
+        InUser.setEditable(false);
+        InUser.setBackground(new java.awt.Color(153, 0, 0));
+        InUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InUserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(InUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 120, -1));
+
+        IconAucol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/IconAuc.jpg"))); // NOI18N
+        IconAucol.setText("jLabel1");
+        getContentPane().add(IconAucol, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 100, -1));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/fondo.jpg"))); // NOI18N
+        Background.setOpaque(true);
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IniciarSesionActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalirActionPerformed
+
+    private void InPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InPassActionPerformed
+
+    private void InUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +149,13 @@ public class Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1Background;
+    private javax.swing.JLabel Background;
+    private javax.swing.JLabel IconAucol;
+    private javax.swing.JPasswordField InPass;
+    private javax.swing.JFormattedTextField InUser;
+    private javax.swing.JButton IniciarSesion;
+    private javax.swing.JButton Salir;
+    private javax.swing.JLabel TextPass;
+    private javax.swing.JLabel TextUser;
     // End of variables declaration//GEN-END:variables
 }
