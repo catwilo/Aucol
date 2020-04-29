@@ -88,10 +88,7 @@ public class Aucol<T> {
         return found;
     }
 
-    private static void find(T l) {
-
-    }
-
+ 
     /**
      * @param args the command line arguments
      * @throws java.io.FileNotFoundException
