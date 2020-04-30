@@ -34,7 +34,7 @@ public class Aucol<T> {
             String linea = br.readLine();
             String[] parts = linea.split(";");
             Book b = new Book(parts[1], parts[0], parts[2], parts[3], parseBoolean(parts[4]));
-            Lbooks.PushFront(b);
+            Lbooks.pushFront(b);
         }
 
         long fin = System.nanoTime();
@@ -60,7 +60,7 @@ public class Aucol<T> {
             String linea = br.readLine();
             String[] parts = linea.split(";");
             Asociado a = new Asociado(parts[4],/* int rol,*/ parts[0], parts[1], parts[2], parts[5], parts[3], parts[6]);
-            Lusers.PushFront(a);
+            Lusers.pushFront(a);
         }
 
         long fin = System.nanoTime();

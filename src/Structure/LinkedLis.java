@@ -19,7 +19,7 @@ public class LinkedLis<T extends Comparable> {
         this.tail = null;
     }
 
-    public void PushFront(T key) {
+    public void pushFront(T key) {
         ChainNode node = new ChainNode(key, this.head);
         this.head = node;
         if (this.tail == null) {
@@ -28,20 +28,7 @@ public class LinkedLis<T extends Comparable> {
 
     }
 
-    /*
-    public void Printlist() {
-        if (this.head == null) {
-            System.out.println("ERROR: empty list");
-            return;
-        }
-        ChainNode p = this.head;
-        while (p != null) {
-            System.out.println(p.getData());
-            p = p.getNext();
-        }
-    }
-     */
-    public void PopFront() {
+    public void popFront() {
         if (this.head == null) {
             System.out.println("ERROR: empty list");
         }
@@ -50,8 +37,36 @@ public class LinkedLis<T extends Comparable> {
             this.tail = null;
         }
     }
-    
-    public ChainNode getHead(){
+
+    public ChainNode getHead() {
         return this.head;
+    }
+
+    public void pushBack(T key) {
+        ChainNode node = new ChainNode(key, null);
+        if (this.head == null) {
+            this.tail = node;
+            this.head = this.tail;
+        } else {
+            this.tail.setNext(node);
+            this.tail = node;
+        }
+    }
+
+    public void popBack() {
+        if (this.head == null) {
+            System.out.println("ERROR: Empty list");
+        }
+        if (this.head == tail) {
+            this.tail = null;
+            this.head = tail;
+        } else {
+            ChainNode p = this.head;
+            while (p.getNext().getNext() != null) {
+                p = p.getNext();
+            }
+            p.setNext(null);
+            this.tail = p;
+        }
     }
 }
