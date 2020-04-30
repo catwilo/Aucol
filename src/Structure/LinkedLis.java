@@ -69,4 +69,12 @@ public class LinkedLis<T extends Comparable> {
             this.tail = p;
         }
     }
+
+    public void addAfter(ChainNode node, T key) {
+        ChainNode nod = new ChainNode(key, node.getNext());
+        node.setNext(nod);
+        if (this.tail == node) {
+            this.tail = nod;
+        }
+    }
 }
