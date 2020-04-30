@@ -69,24 +69,78 @@ public class Aucol {
         return Lusers;
     }
 
-    private static boolean findBook(LinkedLis Lis, String seccion,  char at) {
+    private static boolean findBook(LinkedLis Lis, String tx, char at) {
         boolean found = false;
-        if (at == 'S') {//seccion
-            int j = 0;
-            ChainNode ptr = Lis.getHead();
-            Book B = new Book(seccion);
-
-            while (ptr != null) {
-                if (ptr.getData().compareTo(B) == 0) {
-                    found = true;
-                    j++;
-                    System.out.println(j + "  " + ptr.getData().toString());
-                    //return found;  
+        int j = 0;
+        ChainNode ptr = Lis.getHead();
+        Book book;
+        switch (at) {
+            case 'T':
+                book = new Book(tx, null, null, null, false);
+                while (ptr != null) {
+                    if (ptr.getData().compareTo(book, at) == 0) {
+                        found = true;
+                        j++;
+                        System.out.println(j + "  " + ptr.getData().toString());
+                        //return found;  
+                    }
+                    ptr = ptr.getNext();
+                    //System.out.print("intento ");
                 }
-                //System.out.print("intento ");
-                ptr = ptr.getNext();
-            }
+            case 'A':
+                book = new Book(null, tx, null, null, false);
+                while (ptr != null) {
+                    if (ptr.getData().compareTo(book) == 0) {
+                        found = true;
+                        j++;
+                        System.out.println(j + "  " + ptr.getData().toString());
+                        //return found;  
+                    }
+                    ptr = ptr.getNext();
+                    //System.out.print("intento ");
+                }
+                break;
+            case 'S':
+                book = new Book(null, null, tx, null, false);
+                while (ptr != null) {
+                    if (ptr.getData().compareTo(book) == 0) {
+                        found = true;
+                        j++;
+                        System.out.println(j + "  " + ptr.getData().toString());
+                        //return found;  
+                    }
+                    ptr = ptr.getNext();
+                    //System.out.print("intento ");
+                }
+                break;
+            case 'Z':
+                book = new Book(null, null, null, tx, false);
+                while (ptr != null) {
+                    if (ptr.getData().compareTo(book) == 0) {
+                        found = true;
+                        j++;
+                        System.out.println(j + "  " + ptr.getData().toString());
+                        //return found;  
+                    }
+                    ptr = ptr.getNext();
+                    //System.out.print("intento ");
+                }
+                break;
+            default:
+                ptr = null;
+                book = new Book(tx, null, null, null, false);
+                while (ptr != null) {
+                    if (ptr.getData().compareTo(book) == 0) {
+                        found = true;
+                        j++;
+                        System.out.println(j + "  " + ptr.getData().toString());
+                        //return found;  
+                    }
+                    ptr = ptr.getNext();
+                    //System.out.print("intento ");
+                }
         }
+
         return found;
     }
 
@@ -102,7 +156,7 @@ public class Aucol {
         System.out.println(((fin - inicio) * 1.0e-9));
 
         inicio = System.nanoTime();
-        boolean x = findBook(LBooks, "Matematicas", 'S');
+        boolean x = findBook(LBooks, "BABABABBAABBAAAB", 'T');
         fin = System.nanoTime();
         System.out.println("\n" + x + " " + ((fin - inicio) * 1.0e-9));
     }
