@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author cattwinlow
  */
-public class Aucol<T> {
+public class Aucol {
 
     private static LinkedLis loadbooks() throws IOException {
         FileReader fr = null;
@@ -69,26 +69,27 @@ public class Aucol<T> {
         return Lusers;
     }
 
-    private static boolean findBook(LinkedLis Lis, String seccion) {
+    private static boolean findBook(LinkedLis Lis, String seccion,  char at) {
         boolean found = false;
-        int j = 0;
-        ChainNode ptr = Lis.getHead();
-        Book B = new Book(seccion);
+        if (at == 'S') {//seccion
+            int j = 0;
+            ChainNode ptr = Lis.getHead();
+            Book B = new Book(seccion);
 
-        while (ptr != null) {
-            if (ptr.getData().compareTo(B) == 0) {
-                found = true;
-                j++;
-                System.out.println(j + "  " + ptr.getData().toString());
-                //return found;  
+            while (ptr != null) {
+                if (ptr.getData().compareTo(B) == 0) {
+                    found = true;
+                    j++;
+                    System.out.println(j + "  " + ptr.getData().toString());
+                    //return found;  
+                }
+                //System.out.print("intento ");
+                ptr = ptr.getNext();
             }
-            //System.out.print("intento ");
-            ptr = ptr.getNext();
         }
         return found;
     }
 
- 
     /**
      * @param args the command line arguments
      * @throws java.io.FileNotFoundException
@@ -101,9 +102,8 @@ public class Aucol<T> {
         System.out.println(((fin - inicio) * 1.0e-9));
 
         inicio = System.nanoTime();
-        boolean x = findBook(LBooks, "Matematicas");
+        boolean x = findBook(LBooks, "Matematicas", 'S');
         fin = System.nanoTime();
         System.out.println("\n" + x + " " + ((fin - inicio) * 1.0e-9));
     }
-
 }
